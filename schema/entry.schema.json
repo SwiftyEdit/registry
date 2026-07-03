@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SwiftyEdit Registry Entry",
+    "type": "object",
+    "required": [
+        "slug",
+        "name",
+        "type",
+        "author",
+        "repo",
+        "download_url",
+        "description",
+        "min_swiftyedit_version",
+        "latest_version"
+    ],
+    "properties": {
+        "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "type": {
+            "type": "string",
+            "enum": ["plugin", "theme"]
+        },
+        "author": {
+            "type": "string",
+            "minLength": 1
+        },
+        "repo": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://github\\.com/"
+        },
+        "download_url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://.*\\.zip$"
+        },
+        "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+        },
+        "min_swiftyedit_version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "latest_version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "maxItems": 10
+        },
+        "screenshots": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+            },
+            "maxItems": 6
+        }
+    },
+    "additionalProperties": false
+}

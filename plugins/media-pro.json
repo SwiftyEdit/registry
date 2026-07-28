@@ -1,0 +1,9 @@
+{
+    "slug": "media-pro",
+    "name": "mediaPro",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/media-pro",
+    "description": "Compress and/or resize existing media files.",
+    "tags": ["media", "images", "compression"]
+}

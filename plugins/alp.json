@@ -4,9 +4,6 @@
     "type": "plugin",
     "author": "SwiftyEdit",
     "repo": "https://github.com/SwiftyEdit/alp",
-    "download_url": "https://github.com/SwiftyEdit/alp/releases/download/v1.2/alp-1.2.zip",
     "description": "Advanced Language Pack - expand or overwrite contents from SwiftyEdit's default language packs.",
-    "min_swiftyedit_version": "2.0.0",
-    "latest_version": "1.2.0",
     "tags": ["language", "translation"]
 }

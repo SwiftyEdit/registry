@@ -8,10 +8,7 @@
         "type",
         "author",
         "repo",
-        "download_url",
-        "description",
-        "min_swiftyedit_version",
-        "latest_version"
+        "description"
     ],
     "properties": {
         "slug": {
@@ -35,23 +32,10 @@
             "format": "uri",
             "pattern": "^https://github\\.com/"
         },
-        "download_url": {
-            "type": "string",
-            "format": "uri",
-            "pattern": "^https://.*\\.zip$"
-        },
         "description": {
             "type": "string",
             "minLength": 1,
             "maxLength": 300
-        },
-        "min_swiftyedit_version": {
-            "type": "string",
-            "pattern": "^\\d+\\.\\d+\\.\\d+$"
-        },
-        "latest_version": {
-            "type": "string",
-            "pattern": "^\\d+\\.\\d+\\.\\d+$"
         },
         "tags": {
             "type": "array",

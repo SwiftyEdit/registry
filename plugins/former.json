@@ -1,0 +1,9 @@
+{
+    "slug": "former",
+    "name": "Former",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/former",
+    "description": "Build unlimited forms via drag & drop, with database storage, email delivery, file upload and captcha protection.",
+    "tags": ["forms", "contact"]
+}

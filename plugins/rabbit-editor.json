@@ -1,0 +1,12 @@
+{
+    "slug": "rabbit-editor",
+    "name": "Rabbit Editor",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/rabbit-editor",
+    "download_url": "https://github.com/SwiftyEdit/rabbit-editor/releases/download/v0.1.0/rabbit-editor-0.1.0.zip",
+    "description": "Markdown content-format editor for SwiftyEdit page content, with ACE-powered syntax highlighting in the backend.",
+    "min_swiftyedit_version": "2.0.0",
+    "latest_version": "0.1.0",
+    "tags": ["editor", "markdown"]
+}

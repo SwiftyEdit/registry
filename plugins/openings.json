@@ -1,0 +1,9 @@
+{
+    "slug": "openings",
+    "name": "Openings",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/openings",
+    "description": "Manage opening hours for one or more locations in the backend and insert them into the frontend via shortcode.",
+    "tags": ["hours", "schedule", "business"]
+}

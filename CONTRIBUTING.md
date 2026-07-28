@@ -7,8 +7,16 @@ in the registry.
 
 - Your plugin/theme has its own public GitHub repository
 - It includes an `info.json` manifest as required by SwiftyEdit's
-  plugin/theme installer
-- It's compatible with the SwiftyEdit version you declare below
+  plugin/theme installer, with a `versions` array (each entry carrying
+  `version`, `build`, `requires_build`, and `download_url`) — this is the
+  single source of truth for what gets installed, see "How versioning
+  works" below
+- The `download_url` of its most recent compatible version is itself
+  GitHub-hosted (a Release asset, `raw.githubusercontent.com`, or
+  `codeload.github.com`) — this lets anyone inspect the source before
+  installing. Plugins/themes hosted elsewhere are still valid SwiftyEdit
+  installs via the existing URL-based installer, they just won't be
+  listed here
 
 ## 2. Add your entry
 
@@ -29,10 +37,7 @@ identifier (e.g. `rabbit-editor`, `former`).
     "type": "plugin",
     "author": "your-github-username",
     "repo": "https://github.com/your-username/your-plugin-repo",
-    "download_url": "https://github.com/your-username/your-plugin-repo/releases/download/v1.0.0/your-plugin-slug-1.0.0.zip",
     "description": "One or two sentences describing what it does.",
-    "min_swiftyedit_version": "1.4.0",
-    "latest_version": "1.0.0",
     "tags": ["tag-one", "tag-two"],
     "screenshots": [
         "https://raw.githubusercontent.com/your-username/your-plugin-repo/main/screenshots/1.png"
@@ -46,27 +51,28 @@ identifier (e.g. `rabbit-editor`, `former`).
 | `name` | yes | Display name |
 | `type` | yes | `plugin` or `theme` |
 | `author` | yes | Your GitHub username |
-| `repo` | yes | Public GitHub repo URL (for reference/documentation) |
-| `download_url` | yes | Direct, versioned link to the installable `.zip`. Must point to the exact build for `latest_version` — update this together with `latest_version` on every release |
+| `repo` | yes | Public GitHub repo URL — this is also where the catalog service reads your `info.json` from on every sync |
 | `description` | yes | Short, plain text |
-| `min_swiftyedit_version` | yes | Semver |
-| `latest_version` | yes | Semver, must match your repo's latest release/tag |
 | `tags` | no | Lowercase, used for filtering in the catalog |
 | `screenshots` | no | Up to 6 https URLs, PNG/JPEG/WebP, max 3 MB each |
 
-### About `download_url`
+That's the whole entry — no version, build, or download link lives here.
 
-This must be a direct, versioned link to a `.zip` file — not the repo
-page itself. The easiest way is to attach a `.zip` as an asset to a
-[GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github)
-and link that asset directly. This gives you full control over what's
-inside the package (e.g. excluding dev files, bundling vendored
-dependencies) and avoids relying on GitHub's tag-name conventions for
-auto-generated archive links.
+### How versioning works
 
-Whenever you release a new version, update both `latest_version` and
-`download_url` together in the same PR — a mismatch between the two
-means users install the wrong version.
+Version, build, `requires_build`, and the actual `download_url` are never
+stored in the registry entry itself. On every sync, the catalog service
+reads your `info.json` directly from your repo's root (via the GitHub
+Contents API, so it always sees the current default branch — no `branch`
+field needed here) and picks the entry in your `versions` array with the
+highest `build` number whose `download_url` is GitHub-hosted.
+
+This means shipping a new release never touches this registry: just
+update your own `info.json` (add a new `versions[]` entry, same as you'd
+do for the existing "Install from URL" / self-update mechanism) and the
+catalog picks it up automatically. If your `info.json` is missing, has no
+`versions` array, or its latest `download_url` isn't GitHub-hosted, your
+entry is skipped during sync rather than shown with broken data.
 
 ### About screenshots
 
@@ -82,11 +88,15 @@ plugin/theme submissions or unrelated changes in one PR.
 
 ## 4. Review
 
-A maintainer will check that your entry is valid and your repo is
-reachable, then merge it. Once merged, it typically appears in the
-catalog within a few minutes (sync is triggered automatically on merge).
+A maintainer will check that your entry is valid and your repo (and its
+`info.json`) is reachable, then merge it. Once merged, it typically
+appears in the catalog within a few minutes (sync is triggered
+automatically on merge).
 
 ## Updating an existing entry
 
-Same process — open a PR editing your existing `{slug}.json` file (e.g.
-to bump `latest_version` after a new release).
+Only needed for metadata changes — a new name, description, tags, or
+screenshots. Open a PR editing your existing `{slug}.json` file. Shipping
+a new *version* of your plugin/theme needs no registry change at all;
+just update your own `info.json`'s `versions` array and the next sync
+picks it up.

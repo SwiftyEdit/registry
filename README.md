@@ -2,7 +2,7 @@
 
 Official plugin & theme registry for SwiftyEdit.
 
-This repository is a flat-file, metadata-only registry — it does **not**
+This repository is a flat-file, metadata-only registry — it does ___not___
 contain plugin or theme code. Each entry is a JSON file pointing to the
 actual GitHub repository where the plugin/theme lives.
 

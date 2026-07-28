@@ -18,7 +18,7 @@ Fork this repository and add a new file:
 - Themes: `themes/{your-slug}.json`
 
 The slug should be lowercase, hyphen-separated, and match your plugin's
-identifier (e.g. `claudebridge`, `cik-referenzen`).
+identifier (e.g. `rabbit-editor`, `former`).
 
 ### Entry format
 

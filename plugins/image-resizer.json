@@ -1,0 +1,9 @@
+{
+    "slug": "image-resizer",
+    "name": "Image Resizer",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/image-resizer",
+    "description": "On-the-fly image resizing and format optimization for the {img} Smarty tag: responsive width variants, automatic AVIF/WebP/JPEG negotiation, and disk caching.",
+    "tags": ["media", "images", "performance"]
+}

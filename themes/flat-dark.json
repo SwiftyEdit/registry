@@ -1,0 +1,9 @@
+{
+    "slug": "flat-dark",
+    "name": "flatDark",
+    "type": "theme",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/flatDark",
+    "description": "A dark, flat theme with thin-line accents, no rounded corners and swappable color skins. Covers the full default-theme feature set (shop, blog, events, comments, wishlist).",
+    "tags": ["dark", "flat", "minimal", "skins"]
+}

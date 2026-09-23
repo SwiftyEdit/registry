@@ -25,8 +25,10 @@ Fork this repository and add a new file:
 - Plugins: `plugins/{your-slug}.json`
 - Themes: `themes/{your-slug}.json`
 
-The slug should be lowercase, hyphen-separated, and match your plugin's
-identifier (e.g. `rabbit-editor`, `former`).
+The slug must be exactly the name of the folder your plugin/theme is
+installed into — the `id` in your `info.json` — including case (e.g.
+`rabbit-editor`, `former`, `flatDark`). SwiftyEdit uses it to detect
+whether a plugin/theme is already installed.
 
 ### Entry format
 
@@ -47,7 +49,7 @@ identifier (e.g. `rabbit-editor`, `former`).
 
 | Field | Required | Notes |
 |---|---|---|
-| `slug` | yes | Unique, lowercase, hyphen-separated |
+| `slug` | yes | Unique, identical to the install folder name / `info.json` `id` (letters, digits, hyphens) |
 | `name` | yes | Display name |
 | `type` | yes | `plugin` or `theme` |
 | `author` | yes | Your GitHub username |

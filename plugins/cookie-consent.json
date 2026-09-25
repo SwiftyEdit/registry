@@ -1,0 +1,9 @@
+{
+    "slug": "cookie-consent",
+    "name": "Cookie Consent",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/cookie-consent",
+    "description": "GDPR-compliant cookie banner based on CookieConsent v3: categories, cookie tables, script and embed blocking (YouTube, Vimeo, Maps, social media), multilingual texts, consent log and Google Consent Mode v2.",
+    "tags": ["privacy", "gdpr", "cookies", "consent"]
+}

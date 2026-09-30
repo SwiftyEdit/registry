@@ -1,0 +1,9 @@
+{
+    "slug": "deepl",
+    "name": "DeepL",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/deepl",
+    "description": "Automatic translations of pages and products with the DeepL API: translate a record into all linked language versions when saving. Includes API key management, formality and language variants, shortcode protection, quota overview and translation log.",
+    "tags": ["translation", "deepl", "multilingual", "i18n"]
+}

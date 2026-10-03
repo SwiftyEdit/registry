@@ -1,0 +1,9 @@
+{
+    "slug": "tracker",
+    "name": "Tracker",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/tracker",
+    "description": "Self-hosted, privacy-friendly statistics: pageviews, referrers, browsers, devices, countries and campaign sources (Google Ads, Meta Ads, UTM). Captured server-side and cookie-less with zero frontend footprint, bot filtering, configurable retention and optional GeoIP.",
+    "tags": ["statistics", "analytics", "privacy", "gdpr", "tracking", "campaigns"]
+}

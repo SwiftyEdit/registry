@@ -1,0 +1,9 @@
+{
+    "slug": "parachute",
+    "name": "Parachute",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/parachute",
+    "description": "Backups as downloadable ZIP files: databases, plugin data, uploads, configuration and themes. Consistent SQLite snapshots, pure-PHP MySQL dumps, optional AES-256 encryption, SHA-256 manifest, retention and audit log. Restricted to administrators.",
+    "tags": ["backup", "export", "security", "encryption", "database", "maintenance"]
+}

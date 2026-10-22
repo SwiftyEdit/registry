@@ -40,6 +40,10 @@ whether a plugin/theme is already installed.
     "author": "your-github-username",
     "repo": "https://github.com/your-username/your-plugin-repo",
     "description": "One or two sentences describing what it does.",
+    "homepage": {
+        "en": "https://example.com/en/your-plugin",
+        "de": "https://example.com/de/your-plugin"
+    },
     "tags": ["tag-one", "tag-two"],
     "screenshots": [
         "https://raw.githubusercontent.com/your-username/your-plugin-repo/main/screenshots/1.png"
@@ -55,6 +59,7 @@ whether a plugin/theme is already installed.
 | `author` | yes | Your GitHub username |
 | `repo` | yes | Public GitHub repo URL — this is also where the catalog service reads your `info.json` from on every sync |
 | `description` | yes | Short, plain text |
+| `homepage` | no | Landing page / website, keyed by language code (`en`, `de`, …) — see below |
 | `tags` | no | Lowercase, used for filtering in the catalog |
 | `screenshots` | no | Up to 6 https URLs, PNG/JPEG/WebP, max 3 MB each |
 
@@ -75,6 +80,26 @@ do for the existing "Install from URL" / self-update mechanism) and the
 catalog picks it up automatically. If your `info.json` is missing, has no
 `versions` array, or its latest `download_url` isn't GitHub-hosted, your
 entry is skipped during sync rather than shown with broken data.
+
+### About the homepage
+
+`homepage` is an optional link to a landing page, documentation, or
+product website — anything beyond the GitHub repo that explains your
+plugin/theme in more detail. Because these pages are usually written in
+a specific language, the links are keyed by a two-letter lowercase
+ISO 639-1 language code:
+
+```json
+"homepage": {
+    "en": "https://example.com/en/your-plugin",
+    "de": "https://example.com/de/your-plugin"
+}
+```
+
+Provide as many languages as you have pages for; at least one is
+required if the field is present. URLs must use https. The catalog shows
+the link matching the visitor's language and falls back to `en` (or the
+first available language) otherwise.
 
 ### About screenshots
 
@@ -97,8 +122,8 @@ automatically on merge).
 
 ## Updating an existing entry
 
-Only needed for metadata changes — a new name, description, tags, or
-screenshots. Open a PR editing your existing `{slug}.json` file. Shipping
+Only needed for metadata changes — a new name, description, homepage,
+tags, or screenshots. Open a PR editing your existing `{slug}.json` file. Shipping
 a new *version* of your plugin/theme needs no registry change at all;
 just update your own `info.json`'s `versions` array and the next sync
 picks it up.

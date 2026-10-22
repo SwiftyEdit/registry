@@ -37,6 +37,18 @@
             "minLength": 1,
             "maxLength": 300
         },
+        "homepage": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^[a-z]{2}$"
+            },
+            "additionalProperties": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+            },
+            "minProperties": 1
+        },
         "tags": {
             "type": "array",
             "items": {

@@ -8,7 +8,7 @@ actual GitHub repository where the plugin/theme lives.
 
 The data here is synced automatically into the SwiftyEdit catalog
 service, which powers the plugin/theme browser in the SwiftyEdit backend
-and the public catalog on [swiftyedit.org](https://swiftyedit.org).
+and the public catalog on [swiftyedit.dev](https://swiftyedit.dev).
 
 ## Structure
 

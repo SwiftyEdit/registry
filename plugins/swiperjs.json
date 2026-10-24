@@ -1,0 +1,9 @@
+{
+    "slug": "swiperjs",
+    "name": "Swiper Slider",
+    "type": "plugin",
+    "author": "SwiftyEdit",
+    "repo": "https://github.com/SwiftyEdit/swiperjs",
+    "description": "Any number of Swiper.js slideshows, embedded via shortcode. Slides come from existing snippets, pages, blog posts or products. Four slide layouts, per-slideshow Swiper options, self-hosted bundle; themes can bring their own Swiper and slide CSS.",
+    "tags": ["slider", "slideshow", "carousel", "swiper", "media"]
+}
